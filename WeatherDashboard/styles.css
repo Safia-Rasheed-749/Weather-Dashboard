@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f64f59,#4facfe, #823ea4,#f64f59 );
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 10px;
+    overflow-x: hidden; /* No horizontal scroll */
+}
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+}
+
+.title {
+    margin-bottom: 20px;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: center; /* Center elements on wrap */
+}
+
+.search-box input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    min-width: 200px;
+}
+
+.search-box button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #4facfe, #a558cb);
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(130, 62, 164, 0.4);
+}
+
+.search-box button:hover {
+    background: linear-gradient(135deg, #f64f59, #c471ed);
+    box-shadow: 0 6px 20px rgba(246, 79, 89, 0.4);
+    transform: translateY(-2px);
+}
+
+
+
+/* Mobile-friendly alignment */
+@media (max-width: 600px) {
+    .search-box {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #searchBtn {
+        flex: 0 0 auto;
+    }
+
+    #locationBtn {
+        flex: 0 0 auto; /* Prevent full width */
+        margin-top: 10px; /* Small gap from above row */
+    }
+}
+.weather-card {
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.forecast-cards {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 6px; /* Consistent spacing instead of space-between */
+    margin-top: 6px;
+    justify-content: center; /* Center when wrapping */
+}
+
+.forecast-cards div {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1 1 calc(20% - 10px); /* Default: up to 5 cards per row */
+    min-width: 60px; /* Prevent too small cards */
+    box-sizing: border-box;
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 768px) {
+    .forecast-cards div {
+        flex: 1 1 calc(33.33% - 10px); /* 3 per row */
+    }
+}
+
+/* Small screens (mobiles) */
+@media (max-width: 480px) {
+    .forecast-cards div {
+        flex: 1 1 calc(50% - 10px); /* 2 per row */
+    }
+}
+
+
+.loading {
+    margin-top: 20px;
+    font-size: 18px;
+}
