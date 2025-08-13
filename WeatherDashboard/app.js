@@ -1,4 +1,4 @@
-const API_KEY = "77dd8f7381e718c091f8a3416a3173ab"; // 🔹 Replace with your OpenWeather API Key
+const API_KEY = "Your_API_KEY_Here"; // 🔹 Replace with your OpenWeather API Key
 
 const searchBtn = document.getElementById("searchBtn");
 const locationBtn = document.getElementById("locationBtn");
@@ -104,3 +104,4 @@ searchBtn.addEventListener("click", () => {
 });
 
 locationBtn.addEventListener("click", fetchByLocation);
+
